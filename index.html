@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PURC Tariff Register</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f9ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Top Navigation */
+   header {
+  background: linear-gradient(90deg, #004080, #0073e6);
+  color: white;
+  padding: 10px 20px;   /* reduce top/bottom padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header img {
+  height: 40px;          /* make logo smaller */
+  margin-bottom: 5px;    /* less space under logo */
+}
+
+header h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .welcome {
+      margin-bottom: 40px;
+    }
+    .welcome h2 {
+      color: #004080;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .welcome p {
+      color: #333;
+      font-size: 16px;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #f8fbff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+      font-size: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .card span {
+      display: block;
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      background: #e6f2ff;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <img src="purc-logo.png" alt="PURC Logo">
+    <h1>PURC TARIFF REGISTER</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="container">
+      <div class="welcome">
+        <h2>WELCOME TO PURC TARIFF REGISTER</h2>
+        <p>Access both Quarterly and Major Tariff Review Decisions Papers in one place. Select a category below to begin.</p>
+      </div>
+      <div class="cards">
+        <a href="QTRDP.html" class="card">
+          <span>📑</span>
+          Quarterly Tariff Review (QTRDP)
+        </a>
+        <a href="MTRDP.html" class="card">
+          <span>📚</span>
+          Major Tariff Review (MTRDP)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © protecting the interest of consumers and utility service providers
+  </footer>
+
+</body>
+</html>

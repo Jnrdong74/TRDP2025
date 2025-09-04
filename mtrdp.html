@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Major Tariff Review Decisions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(90deg, #004080, #0073e6);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 40px;
+      margin-bottom: 5px;
+    }
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 600;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background: #0073e6;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #005bb5;
+    }
+    .secondary-btn {
+      background: #eee;
+      color: #333;
+    }
+    .secondary-btn:hover {
+      background: #ccc;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #eee;
+      font-size: 12px;
+      color: #333;
+    }
+    .back-btn {
+  display: flex;
+  justify-content: center;   /* centers the button horizontally */
+  margin-top: 15px;          /* spacing above the button */
+}
+
+.back-btn button {
+  background: #ccc;
+  color: #333;
+  font-size: 14px;           /* smaller text */
+  padding: 6px 12px;         /* smaller button size */
+  border-radius: 6px;        /* softer corners */
+  cursor: pointer;
+}
+
+.back-btn button:hover {
+  background: #aaa;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="purc-logo.png" alt="PURC Logo">
+    <h1>Major Tariff Review Decisions</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Select Year</h2>
+      <form>
+        <select id="year"></select>
+        <button type="submit">View Decision</button>
+      </form>
+      <div class="back-btn">
+  <button type="button" onclick="window.location.href='index.html'">Back to Home</button>
+</div>
+  </main>
+
+  <footer>
+    © Protecting the interest of consumers and utility service providers
+  </footer>
+
+  <script>
+    // Populate years dynamically
+    const yearSelect = document.getElementById("year");
+const majorYears = [2018, 2020, 2022];
+
+majorYears.forEach(y => {
+  const option = document.createElement("option");
+  option.value = y;
+  option.textContent = y;
+  yearSelect.appendChild(option);
+});
+  </script>
+  <script>
+  const reports = {
+    "2018": [
+      { title: "2018 Electricity Major Tariff Review Decision", url: "https://purc.com.gh/attachment/454880-20210309110313.pdf" }
+    ],
+    "2020": [
+      { title: "2019-2020 Electricity & Water Major Tariff Review Decision", url: "https://purc.com.gh/attachment/691834-20210309110327.pdf" }
+    ],
+    "2022": [
+      { title: "2022-2025 Electricity & Water Major Tariff Review Decision", url: "https://purc.com.gh/attachment/440638-20231009071030.pdf" }
+    ]
+  };
+
+  // Handle form submission
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop reload
+
+    const year = document.getElementById("year").value;
+
+    if (reports[year]) {
+      // since each year only has one report, grab the first item
+      const decision = reports[year][0];
+      window.open(decision.url, "_blank");
+    } else {
+      alert("No report available for " + year);
+    }
+  });
+</script>
+</body>
+</html>
